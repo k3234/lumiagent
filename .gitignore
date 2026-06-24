@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+
+# 环境变量
+.env
+.env.local
+.env.*.local
+.github_token
+
+# 部署脚本（仅本地使用）
+deploy.bat
+deploy.ps1
+push.ps1
+push_now.ps1
+create_repo.ps1
+
+# 测试和练习
+case/
+*_practice.py
+*_test.py
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 临时文件
+*.log
+*.tmp
