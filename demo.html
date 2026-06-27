@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LumiAgent - 为老旧设备而生的AI编程调度器</title>
+<style>
+/* ========== 全局重置与基础样式 ========== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: #1a1a1a;
+  color: #e0e0e0;
+  font-family: -apple-system, "Microsoft YaHei", "PingFang SC", sans-serif;
+  line-height: 1.6;
+}
+
+/* ========== 容器：控制内容最大宽度并居中 ========== */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ========== Hero 顶部区域 ========== */
+.hero {
+  text-align: center;
+  padding: 80px 0 50px;
+}
+.hero h1 {
+  font-size: 2.5rem;
+  color: #6c9cce;
+  margin-bottom: 10px;
+}
+.hero p {
+  font-size: 1.1rem;
+  color: #a0a0a0;
+}
+
+/* ========== 核心理念卡片区：flex 横向排列，小屏自动换行 ========== */
+.cards {
+  display: flex;
+  gap: 20px;
+  padding: 0 0 50px;
+  flex-wrap: wrap;
+}
+.cards .card {
+  flex: 1 1 200px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 12px;
+  padding: 30px 24px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+}
+.cards .card h3 {
+  color: #6c9cce;
+  margin-bottom: 12px;
+  font-size: 1.15rem;
+}
+.cards .card p {
+  font-size: 0.95rem;
+  color: #c0c0c0;
+}
+
+/* ========== 运行截图展示区 ========== */
+.screenshot {
+  text-align: center;
+  padding: 0 0 50px;
+}
+
+/* ========== 运行环境说明区 ========== */
+.quickstart {
+  background: rgba(255,255,255,0.05);
+  border-radius: 12px;
+  padding: 30px;
+  max-width: 600px;
+  margin: 0 auto 50px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+}
+.quickstart h2 {
+  color: #6c9cce;
+  margin-bottom: 16px;
+  font-size: 1.3rem;
+  text-align: center;
+}
+.quickstart .step {
+  color: #b0b0b0;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+  padding-left: 20px;
+  position: relative;
+}
+.quickstart .step::before {
+  content: ">";
+  color: #6c9cce;
+  position: absolute;
+  left: 0;
+}
+.quickstart .note {
+  margin-top: 16px;
+  padding: 12px;
+  background: rgba(108,156,206,0.1);
+  border-left: 3px solid #6c9cce;
+  border-radius: 0 8px 8px 0;
+  color: #a0a0a0;
+  font-size: 0.85rem;
+}
+
+/* ========== 开发者故事区 ========== */
+.story {
+  text-align: center;
+  padding: 0 0 50px;
+  max-width: 560px;
+  margin: 0 auto;
+}
+.story h2 {
+  color: #6c9cce;
+  margin-bottom: 16px;
+  font-size: 1.3rem;
+}
+.story p {
+  color: #b0b0b0;
+  font-size: 0.95rem;
+}
+
+/* ========== 底部区 ========== */
+.footer {
+  text-align: center;
+  padding: 30px 0 40px;
+  border-top: 1px solid #333;
+  font-size: 0.9rem;
+  color: #666;
+}
+.footer a {
+  color: #6c9cce;
+  text-decoration: none;
+}
+.footer a:hover { text-decoration: underline; }
+
+/* ========== 移动端适配：≤600px 卡片纵向堆叠 ========== */
+@media (max-width: 600px) {
+  .hero h1 { font-size: 1.8rem; }
+  .hero { padding: 50px 0 30px; }
+  .cards { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+
+<!-- ========== Hero：项目名称 + 一句话定位 ========== -->
+<section class="hero">
+  <h1>LumiAgent</h1>
+  <p>为老旧设备而生的AI编程调度器</p>
+</section>
+
+<!-- ========== 核心理念：三张卡片 ========== -->
+<section class="container cards">
+  <div class="card">
+    <h3>算力平权</h3>
+    <p>不再因为没有高端显卡就被AI时代抛弃。让没有GPU的老旧电脑，也能平等获得AI编程辅助。</p>
+  </div>
+  <div class="card">
+    <h3>休息机制</h3>
+    <p>任务完成后主动卸载模型释放内存，让设备喘口气。这才是"老设备也能用"的关键所在。</p>
+  </div>
+  <div class="card">
+    <h3>极简代码</h3>
+    <p>仅93行Python代码，每行都有中文注释。初学者也能看懂，零门槛上手。</p>
+  </div>
+</section>
+
+<!-- ========== 运行截图 ========== -->
+<section class="container screenshot">
+  <h2 style="color:#6c9cce;margin-bottom:15px;font-size:1.3rem;">LumiAgent 运行截图</h2>
+  <img src="screenshot.png" alt="LumiAgent 运行截图" style="width:100%;max-width:600px;border-radius:8px;box-shadow:0 2px 16px rgba(0,0,0,0.4);">
+</section>
+
+<!-- ========== 运行环境与体验路径 ========== -->
+<section class="quickstart">
+  <h2>运行环境 & 体验路径</h2>
+  <p class="step">环境要求：Python 3.8+ / Ollama / deepseek-r1:1.5b（或其他轻量模型）</p>
+  <p class="step">设备要求：无 GPU 要求，4GB 以上内存即可运行</p>
+  <p class="step">安装方式：git clone https://github.com/k3234/lumiagent</p>
+  <p class="step">启动命令：pip install requests && python agent_core.py</p>
+  <p class="step">离线可用：完全本地运行，无需联网</p>
+  <p class="note">没有独立显卡？没关系。LumiAgent 就是为你的设备设计的。只需安装 Ollama 并拉取一个轻量模型，93 行 Python 代码即可启动你的本地 AI 编程助手。</p>
+</section>
+
+<!-- ========== 开发者故事 ========== -->
+<section class="story">
+  <h2>开发者故事</h2>
+  <p>我是Kai，一名高一学生。没有独立显卡，只有一台普通电脑，但我不想被AI时代甩下。于是我用最直接的方式——调用Ollama API，用TRAE IDE辅助开发了LumiAgent。</p>
+</section>
+
+<!-- ========== 底部：GitHub链接 + 版权 ========== -->
+<footer class="footer">
+  <p><a href="https://github.com/k3234/lumiagent">GitHub: k3234/lumiagent</a></p>
+  <p>&copy; 2026 LumiAgent. MIT License.</p>
+</footer>
+
+</body>
+</html>
