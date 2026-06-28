@@ -50,9 +50,9 @@ cd lumiagent
 # 4. 安装依赖（只需要 requests）
 pip install -r requirements.txt
 
-# 5. ⚠️ 修改 agent_core.py 第 11-12 行的配置
-#     第 11 行：将 Ollama 地址改为你的地址（默认 http://localhost:11434）
-#     第 12 行：将模型名改为你已拉取的模型（如 qwen2.5:7b）
+# 5. ⚠️ 修改 agent_core.py 中的配置变量
+#     self.url：将 Ollama 地址改为你的地址（默认 http://localhost:11434）
+#     self.model：将模型名改为你已拉取的模型（如 qwen2.5:7b）
 
 # 6. 启动 Agent
 python agent_core.py
