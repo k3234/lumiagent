@@ -47,9 +47,10 @@ class LumiAgent:
 
 def main():
     """主函数：CLI交互循环，接收输入、调用process和rest"""
-    # 打印体现算力平权理念的欢迎语
+    # 打印体现算力平权理念的欢迎语，标注 LumiAI-Ecosystem
     print("=" * 50)
-    print("  LumiAgent — 算力平权，让老设备也能用AI")
+    print("  LumiAgent — LumiAI-Ecosystem 调度核心")
+    print("  算力平权，让老设备也能用AI")
     print("=" * 50)
 
     agent = LumiAgent()  # 创建LumiAgent实例
@@ -65,7 +66,8 @@ def main():
         # === /help 命令 ===
         if user_input.lower() == "/help":
             print("\n" + "=" * 50)
-            print("  LumiAgent — 为老旧设备而生的AI编程调度器")
+            print("  LumiAgent — LumiAI-Ecosystem 调度核心")
+            print("  为老旧设备而生的AI编程调度器")
             print("=" * 50)
             print("  核心理念：算力平权，让所有设备平等获得AI编程辅助")
             print("  核心创新：休息机制 — 任务完成后卸载模型释放内存")
@@ -74,6 +76,7 @@ def main():
             print("    - 输入 /help 查看此帮助")
             print("    - 输入 exit / quit / 退出 结束程序")
             print("  GitHub: https://github.com/k3234/lumiagent ")
+            print("  © 2026 Lumi by Kai")
             print("=" * 50)
             continue
         # ========================

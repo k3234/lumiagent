@@ -105,3 +105,4 @@
 ---
 
 *Last updated: 2026-06-27*
+*&copy; 2026 Lumi by Kai*
