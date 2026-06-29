@@ -5,14 +5,12 @@ import requests   # 导入HTTP请求库，用于调用Ollama API
 
 class LumiAgent:
     """LumiAgent类：为老旧设备而生的AI编程调度器"""
-
+    
     def __init__(self):
         """初始化方法：设置Ollama API的地址"""
-        # ⚠️ 使用前请修改：将地址改为你的 Ollama 服务地址（默认 http://localhost:11434）
         self.url = "http://192.168.2.137:11434/api/generate"  # Ollama本地API地址
-        # ⚠️ 使用前请修改：将模型名改为你已拉取的模型（如 qwen2.5:7b / llama3.2:1b 等）
-        self.model = "deepseek-r1:1.5b"  # 默认模型：deepseek-r1:1.5b（约 4GB 内存）
-
+        self.model = "deepseek-r1:1.5b"  # 使用的本地模型名称
+    
     def process(self, user_input):
         """处理用户输入：发送请求到Ollama，解析并返回回答"""
         # 构造JSON请求体：包含模型名、用户问题和是否流式输出
@@ -37,7 +35,7 @@ class LumiAgent:
         except Exception:
             # 捕获其他所有未预期的异常，防止程序崩溃
             return "错误：请求处理时发生未知问题"
-
+    
     def rest(self):
         """休息机制：等待30秒后打印休眠提示，模拟卸载模型释放内存"""
         print("\n💤 为节省资源，Agent进入休眠状态...")  # 提示进入休眠
@@ -47,27 +45,25 @@ class LumiAgent:
 
 def main():
     """主函数：CLI交互循环，接收输入、调用process和rest"""
-    # 打印体现算力平权理念的欢迎语，标注 LumiAI-Ecosystem
+    # 打印体现算力平权理念的欢迎语
     print("=" * 50)
-    print("  LumiAgent — LumiAI-Ecosystem 调度核心")
-    print("  算力平权，让老设备也能用AI")
+    print("  LumiAgent — 算力平权，让老设备也能用AI")
     print("=" * 50)
-
+    
     agent = LumiAgent()  # 创建LumiAgent实例
-
+    
     while True:  # 无限循环，持续接收用户输入
         user_input = input("\n📝 请输入问题: ").strip()  # 读取用户输入并去除首尾空格
-
+        
         if user_input.lower() in ("exit", "quit", "退出"):
             # 如果输入是退出命令，打印告别语并结束循环
             print("\n👋 再见！设备休息一下~")
             break
-
-        # === /help 命令 ===
+        
+        # === /help 命令（新增）===
         if user_input.lower() == "/help":
             print("\n" + "=" * 50)
-            print("  LumiAgent — LumiAI-Ecosystem 调度核心")
-            print("  为老旧设备而生的AI编程调度器")
+            print("  LumiAgent — 为老旧设备而生的AI编程调度器")
             print("=" * 50)
             print("  核心理念：算力平权，让所有设备平等获得AI编程辅助")
             print("  核心创新：休息机制 — 任务完成后卸载模型释放内存")
@@ -76,19 +72,18 @@ def main():
             print("    - 输入 /help 查看此帮助")
             print("    - 输入 exit / quit / 退出 结束程序")
             print("  GitHub: https://github.com/k3234/lumiagent ")
-            print("  © 2026 Lumi by Kai")
             print("=" * 50)
             continue
         # ========================
-
+        
         if not user_input:
             # 如果输入为空，跳过不请求模型
             continue
-
+        
         # 调用process方法获取模型回答并打印
         answer = agent.process(user_input)
         print(f"\n🤖 AI: {answer}")
-
+        
         # 调用rest方法进入30秒休眠
         agent.rest()
 
