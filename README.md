@@ -1,6 +1,7 @@
 # LumiAgent
 
 > 为老旧设备而生的 AI 编程调度器 · LumiAI-Ecosystem 的一部分
+> 目前使用的本地模型受到本身参数的限制，回答可能不准确
 
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://python.org/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
