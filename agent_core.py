@@ -8,7 +8,7 @@ class LumiAgent:
     
     def __init__(self):
         """初始化方法：设置Ollama API的地址"""
-        self.url = "http://192.168.2.137:11434/api/generate"  # Ollama本地API地址
+        self.url = "http://localhost:11434/api/generate"  # Ollama本地API地址
         self.model = "deepseek-r1:1.5b"  # 使用的本地模型名称
     
     def process(self, user_input):
