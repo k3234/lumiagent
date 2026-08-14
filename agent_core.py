@@ -8,7 +8,7 @@ class LumiAgent:
     
     def __init__(self):
         """初始化方法：设置Ollama API的地址"""
-        self.base_url = "http://lost:11434"  # Ollama API基础地址
+        self.base_url = "http://localhost:11434"  # Ollama API基础地址
         self.api_url = f"{self.base_url}/api/generate"  # 生成接口URL
         self.model = "qwen2.5:0.5b-q4_K_M"  # 使用最小模型（~600MB），降低内存占用
     
